@@ -3,9 +3,9 @@ This R script produces a PDF report of survival stats and plots, as well as a CS
 <p>&nbsp;</p>
 
 <b>Usage (unix/bash interface)</b>
->Make sure that the rmarkdown library is installed on your R CLI. If in doubt, run the following command: `Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'`. The worm_survival.Rmd script will automatically download any other necessary packages for its execution. 
+>Make sure that the rmarkdown library is installed on your R CLI. If in doubt, run the following command: `Rscript -e 'install.packages("rmarkdown")'`. The worm_survival.Rmd script will automatically download any other necessary packages for its execution. 
 ```
-Rscript -e 'rmarkdown::render("worm_survival.Rmd", params=list(data="YOUR_FILE.csv"))'
+Rscript -e 'rmarkdown::render("worm_survival.Rmd", params=list(data="test/worms1.csv"))'
 ```
 <p>&nbsp;</p>
 
@@ -17,6 +17,7 @@ Rscript -e 'rmarkdown::render("worm_survival.Rmd", params=list(data="YOUR_FILE.c
 filename | description
 -------- | -------------
 FormattedSurvivalData.csv | This is the survival data reformatted so the Kaplan-Meier plot can be produced; fustat=0 if the worm survived the whole study, fustat=1 if the worm died before the end of the study; futime=day when worm died or day when the study ended (if the worm survived the whole time)
+worm_survival.pdf | This is a PDF report containing survival plots and other statistics. 
 <p>&nbsp;</p>
 
 * Example of a Kaplan-Meier Survival Plot
