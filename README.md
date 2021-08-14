@@ -1,5 +1,5 @@
 # worm_survival
-This R script produces a PDF report of survival stats and plots, as well as a CSV containing the data reformatted for survival analysis. This script was originally created for evaluating toxicity of substances administered to wax moth larvae. 
+This R script produces a PDF report of survival stats and plots (ex: `test/worm_survival.pdf`), as well as a CSV containing the data reformatted for survival analysis (ex: `FormattedSurvivalData.csv`). This script was originally created for evaluating toxicity of substances administered to wax moth larvae. 
 <p>&nbsp;</p>
 
 <b>Usage (unix/bash interface)</b>
