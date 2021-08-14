@@ -1,10 +1,11 @@
 # worm_survival
-This R script produces survival stats and a Kaplan-Meier plot (originally created for wax worm experiments). 
+This R script produces a PDF report of survival stats and plots, as well as a CSV containing the data reformatted for survival analysis. This script was originally created for evaluating toxicity of substances administered to wax moth larvae. 
 <p>&nbsp;</p>
 
-<b>Usage</b>
+<b>Usage (unix/bash interface)</b>
+>Make sure that the rmarkdown library is installed on your R CLI. If in doubt, run the following command: `Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'`. The worm_survival.Rmd script will automatically download any other necessary packages for its execution. 
 ```
-Rscript worm_survival.R WORM_COUNT_DATA.csv
+Rscript -e 'rmarkdown::render("worm_survival.Rmd", params=list(data="YOUR_FILE.csv"))'
 ```
 <p>&nbsp;</p>
 
@@ -15,18 +16,13 @@ Rscript worm_survival.R WORM_COUNT_DATA.csv
 <b>Output</b>
 filename | description
 -------- | -------------
-LT50.csv | CSV contaning the LT50 (time, in days, when 50% of worms are dead) for all test conditions
-LogRankPvalues.csv | CSV contaning the log rank p-values between each pair of test conditions (a test for significance) 
-cox_plot.jpeg | a plot containing hazard ratios, using the first test condition as the negative control reference
-survival_plot.jpeg | Kaplan-Meier plot of survivial probability over time
 FormattedSurvivalData.csv | This is the survival data reformatted so the Kaplan-Meier plot can be produced; fustat=0 if the worm survived the whole study, fustat=1 if the worm died before the end of the study; futime=day when worm died or day when the study ended (if the worm survived the whole time)
-Rplots.pdf | empty file that needs to be deleted
 <p>&nbsp;</p>
 
-* Kaplan-Meier Survival Plot
+* Example of a Kaplan-Meier Survival Plot
 
 <img src="https://github.com/amcrabtree/worm_survival/blob/main/images/survival_plot.jpeg" alt="drawing" width="500"/>
 
-* Cox Hazard Plot
+* Example of a Cox Hazard Plot
 
 <img src="https://github.com/amcrabtree/worm_survival/blob/main/images/cox_plot.jpeg" alt="drawing" width="500"/>
