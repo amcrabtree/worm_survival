@@ -14,10 +14,12 @@ Rscript -e 'rmarkdown::render("worm_survival.Rmd", params=list(data="test/worms1
 <p>&nbsp;</p>
 
 <b>Output</b>
+
 filename | description
 -------- | -------------
 FormattedSurvivalData.csv | This is the survival data reformatted so the Kaplan-Meier plot can be produced; fustat=0 if the worm survived the whole study, fustat=1 if the worm died before the end of the study; futime=day when worm died or day when the study ended (if the worm survived the whole time)
 worm_survival.pdf | This is a PDF report containing survival plots and other statistics. 
+
 <p>&nbsp;</p>
 
 * Example of a Kaplan-Meier Survival Plot
